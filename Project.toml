@@ -1,0 +1,9 @@
+name = "Advent19"
+version = "0.1.1"
+uuid = "105aa8c5-91f1-4461-82f1-ec34fc362f9b"
+[deps]
+CSV = "336ed68f-0bac-5ca0-87d4-7b16caf5d00b"
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+[targets]
+test = ["Test"]
