@@ -1,6 +1,6 @@
 using Advent19, Test
 
-@testset "Week 1 Puzzle 1" begin
+@testset "Day 1 Puzzle 1" begin
   @test tyranny([14])==2
   @test tyranny([12])==2
   @test tyranny([1969])==654
