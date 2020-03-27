@@ -1,3 +1,3 @@
 module Advent19
-  include("Tyranny.jl")
+  include("Fuel.jl")
 end
