@@ -1,4 +1,5 @@
 import CSV
+using DistributedArrays
 
 function raw_fuel(mass::Integer)
     fuel = mass ÷ 3 -2
@@ -9,8 +10,8 @@ function fuel(mass::Integer)
     return raw<=0 ? 0 : raw + fuel(raw)
 end
 
-function fuel(masses::Array)
-  return sum(fuel.(masses))
+function fuel(masses::AbstractArray)
+  return mapreduce(fuel,+,masses)
 end
 
 function parse_module_data(filename::String)
