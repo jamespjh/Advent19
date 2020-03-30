@@ -1,8 +1,16 @@
 import CSV
 
-function fuel(mass::Integer)
+function raw_fuel(mass::Integer)
     fuel = mass ÷ 3 -2
     return fuel<0 ? 0 : fuel
+end
+
+function fuel(mass::Integer)
+    raw = raw_fuel(mass)
+    if raw==0
+        return 0
+    end
+    return raw + fuel(raw)
 end
 
 function fuel(masses::Array)
@@ -13,4 +21,4 @@ function fuel(masses::String)
   return fuel(reshape(Matrix(CSV.read(masses, header=false)),:))
 end
 
-export fuel
+export fuel, raw_fuel
