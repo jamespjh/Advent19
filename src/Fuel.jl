@@ -1,7 +1,8 @@
 import CSV
 
 function fuel(mass::Integer)
-    return mass ÷ 3 -2
+    fuel = mass ÷ 3 -2
+    return fuel<0 ? 0 : fuel
 end
 
 function fuel(masses::Array)
