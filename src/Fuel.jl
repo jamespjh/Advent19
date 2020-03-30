@@ -6,10 +6,7 @@ end
 
 function fuel(mass::Integer)
     raw = raw_fuel(mass)
-    if raw<=0
-        return 0
-    end
-    return raw + fuel(raw)
+    return raw<=0 ? 0 : raw + fuel(raw)
 end
 
 function fuel(masses::Array)
