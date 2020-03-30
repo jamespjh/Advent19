@@ -2,12 +2,11 @@ import CSV
 
 function raw_fuel(mass::Integer)
     fuel = mass ÷ 3 -2
-    return fuel<0 ? 0 : fuel
 end
 
 function fuel(mass::Integer)
     raw = raw_fuel(mass)
-    if raw==0
+    if raw<=0
         return 0
     end
     return raw + fuel(raw)

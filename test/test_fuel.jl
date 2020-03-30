@@ -3,10 +3,10 @@
   @test raw_fuel(12)==2
   @test raw_fuel(1969)==654
   @test raw_fuel(100756)==33583
-  @test raw_fuel(0)==0
 end
 
 @testset "Day 1 Puzzle 2" begin
+    @test fuel(0)==0
     @test fuel(14) == 2
     @test fuel(1969) == 966
     @test fuel(100756) == 50346
