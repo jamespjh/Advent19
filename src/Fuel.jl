@@ -13,8 +13,12 @@ function fuel(masses::Array)
   return sum(fuel.(masses))
 end
 
-function fuel(masses::String)
-  return fuel(reshape(Matrix(CSV.read(masses, header=false)),:))
+function parse_module_data(filename::String)
+    return reshape(Matrix(CSV.read(filename, header=false)),:)
 end
 
-export fuel, raw_fuel
+function fuel(masses::String)
+  return fuel(parse_module_data(masses))
+end
+
+export fuel, raw_fuel, parse_module_data
