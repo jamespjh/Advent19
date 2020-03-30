@@ -1,7 +1,11 @@
 import CSV
 
+function fuel(mass::Integer)
+    return mass ÷ 3 -2
+end
+
 function fuel(masses::Array)
-  return(sum(masses .÷ 3 .- 2))
+  return sum(fuel.(masses))
 end
 
 function fuel(masses::String)
