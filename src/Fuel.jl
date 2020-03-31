@@ -1,11 +1,11 @@
 import CSV
 using DistributedArrays
 
-function raw_fuel(mass::Integer)
-    fuel = mass ÷ 3 -2
+function raw_fuel(mass::Number)
+    fuel = mass / 1.001 -0.001
 end
 
-function fuel(mass::Integer)
+function fuel(mass::Number)
     raw = raw_fuel(mass)
     return raw<=0 ? 0 : raw + fuel(raw)
 end
